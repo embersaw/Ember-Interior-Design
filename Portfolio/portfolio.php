@@ -1,8 +1,15 @@
 <?php
-
 require('database/db.php');
-$query="SELECT * FROM clients";
+$query="SELECT * FROM portfolio";
 $result=mysqli_query($conn,$query);
+$type=array();
+
+while ($row = mysqli_fetch_array($result)) {
+    $type[]=$row['Type'];
+    $dbarray[]=$row;  
+}
+$unique = array_unique($type);
+
 
 ?>
 <!doctype html>
@@ -11,7 +18,7 @@ $result=mysqli_query($conn,$query);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Services </title>
+    <title> Portfolio </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="aboutus.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -20,11 +27,11 @@ $result=mysqli_query($conn,$query);
 
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Ember Interior Design and Solutions</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Ember Interior Design and Solutions</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
@@ -47,7 +54,7 @@ $result=mysqli_query($conn,$query);
             <a class="nav-link" href="contactus.php">Contact Us</a>
         </li>
     </div>
-  </nav>
+    </nav>
       
     <div id="carouselExampleCaptions" class="carousel slide pb-5" data-ride="carousel">
   
@@ -55,9 +62,9 @@ $result=mysqli_query($conn,$query);
           <div class="carousel-item active">
             <img src="./assets/1-revised.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Clients</h5>
+              <h5>Portfolio</h5>
               
-              <a href="index.php">Home</a> / <b>Clients</b>
+              <a href="index.php">Home</a> / <b>Portfolio</b>
             </div>
           </div>
           </div>
@@ -65,35 +72,41 @@ $result=mysqli_query($conn,$query);
 
     </div>
 
-    <div class="container py-5">
-        <div class="text-center pb-3" id="second">Our Clients</div>
-        <table class="table table-striped text-center text-muted ">
-            <thead>
-              <tr>
-                <th scope="col">Number</th>
-                <th scope="col">Client Name</th>
-                <th scope="col">Where</th>
-                <th scope="col">Worktype</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-              while($row=mysqli_fetch_array($result)){
-              
-                    echo '<tr>';
-                    echo '<td>'.$row['ID'].'</td>';
-                    echo '<td class="font-weight-bold">'.$row['Name'].'</td>';
-                    echo '<td>'.$row['Location'].'</td>';
-                    echo '<td>'.$row['Type'].'</td>';
-                    echo '</tr>';
-                }
-              ?>
-                
-            </tbody>
-          </table>
-    </div>
 
-    <footer id="footer" class="py-5 ">
+
+
+
+
+
+
+
+
+        <div class="portfolio second">
+            <div class="container py-5">
+                
+                <div id="filters" class="button-group text-center px-2">
+                    <button class="btn is-checked btn-lg mx-2 btn-info" aria-pressed="true" data-filter="*">All Brand</button>
+                        <?php
+                            array_map(function ($brand){
+                                printf('<button class="btn btn-lg mx-2 btn-info" data-filter=".%s">%s</button>', $brand, $brand);
+                            }, $unique);
+                        ?>
+                </div>
+                <div class="grid py-5">
+                    <?php array_map(function ($item){ ?>
+                        <div class="grid-item <?php echo $item['Type'] ?> border m-2">
+                            <div class="item p-1" style="width: 200px;">
+                                <div class="product">
+                                    <img src="<?php echo $item['Image']?>" alt="image1" class="img-fluid"></a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php }, $dbarray) ?> 
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer" class="py-5 ">
         <div class="container">
           <div class="row">
             <div class="col-lg-3">
@@ -152,11 +165,31 @@ $result=mysqli_query($conn,$query);
       </footer>
 
 
-      
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-</body>
 
+
+
+
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+        
+        <script>
+            
+                var $grid = $(".grid").isotope({
+                itemSelector : '.grid-item',
+                layoutMode : 'fitRows'
+                });
+
+                $(".button-group").on("click", "button", function(){
+                    var filterValue = $(this).attr('data-filter');
+                    $grid.isotope({ filter: filterValue});
+                });
+            
+    </script>
+
+    </body>
 </html>

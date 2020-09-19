@@ -23,16 +23,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="aboutus.html">About Us</a>
+                <a class="nav-link" href="aboutus.php">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="services.html">Services</a>
+                <a class="nav-link" href="services.php">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Portfolio</a>
+                <a class="nav-link" href="portfolio.php">Portfolio</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="client.php">Clients</a>
@@ -51,7 +51,7 @@
             <div class="carousel-caption d-none d-md-block">
               <h5>Contact Us</h5>
               
-              <a href="index.html">Home</a> / <b>Contact Us</b>
+              <a href="index.php">Home</a> / <b>Contact Us</b>
             </div>
           </div>
         </div>
@@ -101,10 +101,10 @@
   
               <br>
               <br>
-              <a href="aboutus.html" class="footera">About Us</a><br><br>
-              <a href="services.html" class="footera">Services</a><br><br>
+              <a href="aboutus.php" class="footera">About Us</a><br><br>
+              <a href="services.php" class="footera">Services</a><br><br>
               <a href="client.php" class="footera">Clients</a><br><br>
-              <a href="#" class="footera">Portfolio</a><br><br>
+              <a href="portfolio.php" class="footera">Portfolio</a><br><br>
               <a href="contactus.php" class="footera">Contact Us</a><br><br>
             </div>
             <div class="col-lg-4">
