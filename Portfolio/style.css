@@ -1,0 +1,176 @@
+.carousel-item{
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    background-size: cover;
+    text-align: center;
+}
+.carousel-caption{
+    bottom:350px;
+}
+.carousel-caption h5{
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-family: merienda;
+    font-weight: bold;
+}
+.carousel-caption p{
+    width: 60%;
+    margin: auto;
+    font-size: 35px;
+    line-height: 1.9;
+    font-family: poppins;
+    font-weight: bold;
+}
+.carousel-caption a{
+    width: 60%;
+    margin: auto;
+    font-size: 25px;
+    line-height: 1.9;
+    font-family: poppins;
+    font-weight: bold;
+    color: white;
+    border: 1px solid white;
+    padding : 10px 30px;
+}
+.carousel-caption a:hover{
+    width: 60%;
+    margin: auto;
+    font-size: 25px;
+    line-height: 1.9;
+    font-family: poppins;
+    font-weight: bold;
+    color: white;
+    background : rgb(47,80,224);
+    padding : 10px 30px;
+}
+.navbar-nav a{
+    font-family: poppins;
+    font-size : 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color : white;
+    padding : auto;
+}
+
+.navbar-brand{
+    color : #fff;
+    
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.navbar-brand:hover{
+    color : black;
+    
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#hotline{
+    background-color: rgb(164,205,57);
+    font-size: 23px;
+    width: fit-content;
+    height: fit-content;
+}
+#hotline:hover{
+    background-color: white;
+    font-size: 23px;
+    color: black;
+}
+
+.navbar-nav{
+    text-align: center;
+}
+
+.nav-link.active, .nav-link:hover{
+    background : rgb(164,205,57);
+}
+
+#title{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-bottom: 10px;
+}
+#writings{
+    text-align: center;
+    font-size: 19px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: darkgray;
+}
+#pic{
+    justify-content: center;
+}
+#header{
+    text-align: center;
+    font-size: 35px;
+}
+
+#left{
+    float: left;
+}
+#right{
+    float: right;
+}
+#Section{
+    font-size: 25px;
+}
+#writings1{
+    font-size: 17px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: darkgray;
+
+}
+#second{
+    font-size: 55px;
+    padding-top: 220px;
+    padding-left: 220px ;
+    color: darkgray;
+    font-family: sans-serif;
+}
+
+#secondsecond{
+    font-size: 35px;
+    padding-top: 20px;
+    padding-left: 160px ;
+    padding-bottom: 50px;
+    color: darkgray;
+    font-family: sans-serif;
+}
+
+#contact{
+    background-color: rgb(164,205,57);
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    border: 1px rgb(164, 205,57);
+    font-size: 35px;
+    margin-left: 310px ;
+    padding: 10px;
+    font-weight: bold;
+    font-family: poppins;
+}
+
+#footer{
+    background-color: rgb(24, 24, 35);
+    color: darkgray;
+}
+.footera{
+    color: darkgray;
+}
+.footera:hover{
+    color: white;
+}
+#fontofmenu{
+    font-size: 25px;
+}
+.appreciation{
+    display: none;
+}
