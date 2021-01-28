@@ -157,7 +157,7 @@
         <div class="float-left">
         <div id="second">Think Different</div>
         <div id="secondsecond">Let Start Building your idea to life.</div>
-        <a href="#" id="contact">Contact Us</a>
+        <a href="contactus.php" id="contact">Contact Us</a>
       </div>
         <img src="./assets/picture2.jpg" class="float-right">
       </div>
